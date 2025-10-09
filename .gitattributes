@@ -1,2 +1,40 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Desenvolvedor Front-End</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Portfólio</div>
+        <nav class="nav-links">
+            <button class="menu-toggle">☰</button>
+            <button class="dark-mode-toggle">⚪</button>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="content">
+            <h1 class="greeting">Olá, eu sou o</h1>
+            <h2 class="name">Rhuan Bello :)</h2>
+            <p class="role">Desenvolvedor Front-End | Next.js | React.js | Node.js</p>
+            <div class="actions">
+                <a href="#" class="btn primary-btn">Download CV</a>
+                <a href="#" class="btn secondary-btn">Entrar em contato</a>
+            </div>
+        </div>
+
+        <div class="profile-image-container">
+            <img src="caminho/para/sua/foto.jpg" alt="Foto de perfil de Rhuan Bello" class="profile-image">
+        </div>
+    </section>
+
+    <section class="skills-section">
+        <h3>Habilidades</h3>
+        </section>
+
+</body>
+</html>

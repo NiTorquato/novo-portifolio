@@ -1,0 +1,187 @@
+/* Variáveis para cores */
+:root {
+    --primary-color: #5d3f9e; /* Roxo escuro */
+    --secondary-color: #8c60f7; /* Roxo claro */
+    --background-dark: #1f1d2c; /* Fundo principal escuro */
+    --text-light: #ffffff;
+    --text-muted: #c0c0c0;
+}
+
+/* Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Navegação (Topo) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: rgba(0, 0, 0, 0.2); /* Fundo sutil para o menu */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--text-light);
+}
+
+.menu-toggle, .dark-mode-toggle {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+/* --- Seção Principal (Hero) --- */
+.hero-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 100px 50px;
+    min-height: 80vh; /* Altura mínima da seção */
+    flex-wrap: wrap; /* Permite que os itens quebrem em telas menores */
+    position: relative;
+    overflow: hidden; /* Garante que o gradiente não vaze muito */
+}
+
+/* Efeito de fundo inspirado no vídeo */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 0;
+    right: 0;
+    bottom: -100px;
+    background: linear-gradient(135deg, rgba(31, 29, 44, 1) 0%, rgba(93, 63, 158, 0.1) 50%, rgba(31, 29, 44, 1) 100%);
+    z-index: 1;
+}
+
+.content {
+    max-width: 500px;
+    z-index: 2; /* Fica acima do gradiente */
+}
+
+.greeting {
+    font-size: 1.5em;
+    color: var(--text-muted);
+    font-weight: 300;
+}
+
+.name {
+    font-size: 3.5em;
+    font-weight: 700;
+    color: var(--text-light);
+    margin: 10px 0;
+}
+
+.role {
+    font-size: 1.1em;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+}
+
+/* Imagem de Perfil */
+.profile-image-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    /* Efeito de destaque roxo em volta da foto */
+    background: radial-gradient(circle at center, var(--secondary-color) 0%, transparent 70%);
+    padding: 10px;
+    z-index: 2;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    /* Borda sutil para dar o efeito de anel interno */
+    border: 5px solid rgba(140, 96, 247, 0.3); 
+}
+
+/* Botões */
+.actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.primary-btn {
+    background-color: var(--secondary-color);
+    color: var(--background-dark);
+}
+
+.primary-btn:hover {
+    background-color: #ab86ff;
+}
+
+.secondary-btn {
+    background: none;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.secondary-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--background-dark);
+}
+
+/* Seções Adicionais (apenas para contexto visual) */
+.skills-section {
+    padding: 50px;
+    text-align: center;
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column-reverse; /* Coloca a foto em cima do texto no mobile */
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .profile-image-container {
+        margin-bottom: 40px;
+        width: 250px;
+        height: 250px;
+    }
+
+    .content {
+        max-width: 100%;
+    }
+
+    .name {
+        font-size: 2.5em;
+    }
+
+    .actions {
+        justify-content: center;
+        flex-direction: column;
+    }
+}
