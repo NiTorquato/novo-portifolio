@@ -1,0 +1,671 @@
+/* --- 0. Variáveis e Reset Básico --- */
+:root {
+    /* Cores (Modo Escuro inspirado no vídeo) */
+    --color-primary: #8c60f7; /* Roxo de destaque */
+    --color-secondary: #5d3f9e; /* Roxo mais escuro/sombra */
+    --color-background-dark: #1f1d2c; /* Fundo principal escuro */
+    --color-background-card: #2c2a3d; /* Fundo de cards/elementos */
+    --color-text-light: #ffffff;
+    --color-text-muted: #c0c0c0;
+    --color-border: #4d4d6e; /* Borda sutil */
+
+    /* Espaçamento */
+    --padding-container: 0 50px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--color-background-dark);
+    color: var(--color-text-light);
+    line-height: 1.6;
+    overflow-x: hidden; /* Previne rolagem horizontal */
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text-light);
+    transition: color 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--padding-container);
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    border-left: 5px solid var(--color-primary);
+    padding-left: 15px;
+}
+
+/* --- 1. Cabeçalho (Header e Navegação) --- */
+header {
+    background-color: var(--color-background-dark);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2 {
+    margin-bottom: 0;
+    font-size: 1.5em;
+    border-left: none;
+    padding-left: 0;
+    color: var(--color-text-light);
+}
+
+.menu, .toggle {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.ri-menu-line, .ri-close-line {
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+/* Esconde o menu toggle por padrão (só aparecerá em mobile) */
+.menu {
+    display: none;
+}
+
+/* Estilizando o Toggle de Modo Escuro/Claro (Switch) */
+.toggle input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle .label {
+    width: 50px;
+    height: 26px;
+    background-color: var(--color-border);
+    display: flex;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle .box {
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-text-light);
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    border-radius: 50%;
+    transition: transform 0.3s linear;
+}
+
+.toggle input[type="checkbox"]:checked + .label .box {
+    transform: translateX(24px);
+    background-color: var(--color-primary);
+}
+
+
+/* --- 2. Menu Mobile --- */
+.menuOpen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(31, 29, 44, 0.95);
+    z-index: 999;
+    padding: 100px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.menuOpen h2 {
+    color: var(--color-primary);
+    margin-bottom: 40px;
+    border-left: none;
+    padding-left: 0;
+    font-size: 1.8em;
+}
+
+.menuOpen nav a {
+    display: block;
+    font-size: 1.5em;
+    margin: 20px 0;
+    color: var(--color-text-light);
+    transition: color 0.3s;
+}
+
+.menuOpen nav a:hover {
+    color: var(--color-primary);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- 3. Seção Sobre (Hero e Descrição) --- */
+#sobre {
+    padding-top: 50px;
+}
+
+.banner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 0;
+    gap: 40px;
+    flex-wrap: wrap-reverse; /* Foto no desktop à direita */
+}
+
+.intro {
+    max-width: 550px;
+}
+
+.intro .title h1 {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.intro .title span {
+    display: block;
+    color: var(--color-primary);
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.intro .title p {
+    color: var(--color-text-muted);
+    margin-bottom: 40px;
+}
+
+/* Imagem de Perfil */
+.profile {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    /* Destaque circular roxo */
+    background: radial-gradient(circle at center, var(--color-primary) 0%, transparent 70%);
+    padding: 10px;
+    animation: pulse-glow 2s infinite alternate; /* Adiciona uma animação sutil */
+}
+
+@keyframes pulse-glow {
+    from {
+        box-shadow: 0 0 10px rgba(140, 96, 247, 0.4);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(140, 96, 247, 0.8);
+    }
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    /* Borda sutil interna */
+    border: 5px solid rgba(140, 96, 247, 0.2); 
+}
+
+/* Botões de Ação */
+.actions {
+    display: flex;
+    gap: 15px;
+}
+
+.actions a {
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+    text-align: center;
+}
+
+.actions a:first-child {
+    background-color: var(--color-primary);
+    color: var(--color-background-dark);
+}
+
+.actions a:first-child:hover {
+    background-color: #ab86ff;
+}
+
+.actions a:last-child {
+    background: none;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.actions a:last-child:hover {
+    background-color: var(--color-primary);
+    color: var(--color-background-dark);
+}
+
+.about {
+    padding: 50px 0 100px 0;
+}
+
+.about p {
+    color: var(--color-text-muted);
+    font-size: 1.1em;
+}
+
+.about p strong {
+    color: var(--color-primary);
+}
+
+/* --- 4. Seção de Habilidades (Skills) --- */
+#skills {
+    background-color: var(--color-background-card);
+    padding: 80px 0;
+    text-align: center;
+}
+
+#skills h2 {
+    color: var(--color-text-light);
+    text-align: center;
+    border-left: none;
+    padding-left: 0;
+}
+
+.skills .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.skills .box {
+    width: 130px;
+    height: 130px;
+    background-color: var(--color-background-dark);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skills .box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(140, 96, 247, 0.3);
+}
+
+.skills .box img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.skills .box p {
+    font-size: 0.9em;
+    color: var(--color-text-muted);
+}
+
+/* --- 5. Seção de Projetos --- */
+#projects {
+    padding: 80px 0;
+}
+
+.highlights h3 {
+    font-size: 1.5em;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.cards-projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.cards-projects .box {
+    width: 350px;
+    background-color: var(--color-background-card);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.cards-projects .box:hover {
+    transform: translateY(-5px);
+}
+
+.cards-projects .cover {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.cards-projects .cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s;
+}
+
+.cards-projects .box:hover .cover img {
+    opacity: 0.8;
+}
+
+.cards-projects .details {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    padding: 10px;
+    color: var(--color-text-light);
+}
+
+.cards-projects .details p {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.mini-languages {
+    display: flex;
+    gap: 5px;
+}
+
+.mini-languages img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.cards-projects .description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.cards-projects .description p {
+    color: var(--color-text-muted);
+    font-size: 0.9em;
+}
+
+.cards-projects .description a {
+    color: var(--color-primary);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.allprojects h3 {
+    font-size: 1.5em;
+    color: var(--color-text-light);
+    margin-bottom: 15px;
+}
+
+.allprojects p {
+    color: var(--color-text-muted);
+}
+
+/* --- 6. Seção de Contatos --- */
+#contacts {
+    background-color: var(--color-background-card);
+    padding: 80px 0;
+    text-align: center;
+}
+
+#contacts h2 {
+    text-align: center;
+    border-left: none;
+    padding-left: 0;
+}
+
+.contacts .icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.contacts .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180px;
+    text-align: center;
+}
+
+.contacts .icon .box {
+    width: 80px;
+    height: 80px;
+    background-color: var(--color-background-dark);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    border: 2px solid var(--color-primary);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contacts .icon .box:hover {
+    background-color: var(--color-primary);
+    transform: translateY(-5px);
+}
+
+.contacts .icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.contacts .icon p:first-of-type {
+    font-weight: 600;
+    color: var(--color-text-light);
+    margin-bottom: 5px;
+}
+
+.contacts .icon p:last-of-type {
+    font-size: 0.9em;
+    color: var(--color-text-muted);
+}
+
+/* --- 7. Modal (Oculto por Padrão) --- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(31, 29, 44, 0.95);
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal .top {
+    display: flex;
+    background-color: var(--color-background-dark);
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.modal .video {
+    flex: 2;
+    background-color: black;
+    min-height: 250px;
+}
+
+.modal .info {
+    flex: 1;
+    padding: 20px;
+}
+
+.modal .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.modal .title h2 {
+    font-size: 1.5em;
+    margin-bottom: 0;
+    border-left: none;
+    padding-left: 0;
+}
+
+.modal .title .ri-close-line {
+    font-size: 1.5em;
+    cursor: pointer;
+    color: var(--color-primary);
+}
+
+.modal .info p {
+    color: var(--color-text-muted);
+    margin-bottom: 15px;
+}
+
+.modal .info span {
+    display: block;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.modal .links {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.modal .links a {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    transition: background-color 0.3s;
+}
+
+.modal .links a:hover {
+    background-color: var(--color-primary);
+}
+
+
+/* --- 8. Responsividade (Ajustes para Mobile) --- */
+@media (max-width: 950px) {
+    .container {
+        padding: var(--padding-container-mobile, 0 20px);
+    }
+    
+    h2 {
+        font-size: 1.7em;
+    }
+
+    /* Cabeçalho */
+    header .container .toggle {
+        display: none; /* Esconde o toggle switch no mobile para simplificar */
+    }
+
+    .menu {
+        display: flex; /* Mostra o menu hamburger */
+    }
+
+    /* Seção Sobre */
+    .banner {
+        flex-direction: column-reverse; /* Foto acima do texto */
+        text-align: center;
+        padding: 50px 0 20px 0;
+    }
+
+    .intro {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .intro .title h1 {
+        font-size: 2.5em;
+    }
+    
+    .actions {
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 40px;
+    }
+
+    .about {
+        padding-top: 20px;
+    }
+
+    /* Seção Habilidades */
+    .skills .cards {
+        gap: 15px;
+    }
+    
+    .skills .box {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .skills .box img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Seção Projetos */
+    .cards-projects .box {
+        width: 100%; /* Ocupa a largura total */
+    }
+    
+    /* Modal */
+    .modal .top {
+        flex-direction: column;
+        max-width: 100%;
+        max-height: 95vh;
+        overflow-y: auto;
+    }
+
+    .modal .video {
+        width: 100%;
+        min-height: 200px;
+    }
+
+    .modal .links {
+        flex-direction: column;
+        width: 100%;
+    }
+}

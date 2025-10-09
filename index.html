@@ -1,11 +1,259 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfólio | Nicodemos Torquato - QA & Desenvolvedor em Formação</title>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/css/style.css">
+    <script defer src="scripts/script.js"></script>
+    <script defer src="scripts/modal.js"></script>
 </head>
 <body>
-    
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="container">
+            <div class="menu">
+                <i class="ri-menu-line"></i>
+                <i class="ri-close-line hidden"></i>
+            </div>
+            <a href="#sobre">
+                <h2>Portfólio</h2>
+            </a>    
+            <div class="toggle">
+                <input type="checkbox" name="checkbox" id="checkbox">
+                <label for="checkbox" class="label">
+                    <div class="box"></div>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEÇÃO SOBRE -->
+    <section id="sobre" class="js-section">
+        <div class="container">
+            <div class="banner">
+                <div class="intro">
+                    <div class="title">
+                        <h1>Nicodemos Torquato</h1> 
+                        <span>QA | Ciência de Dados</span>
+                        <p>Aprendendo continuamente e aplicando boas práticas em qualidade de software e Ciência de Dados. 
+                           Busco transformar aprendizado em resultados reais e profissionais.</p>
+                    </div>
+                    <div class="actions">
+                        <a href="assets/cv/cv-nicodemos-torquato.pdf" download>Download CV</a>
+                        <a href="mailto:nicodemostorquato@gmail.com" target="_blank">Entrar em contato</a>
+                    </div>
+                </div>
+                <div class="profile">
+                    <img src="image/eu.jpeg" alt="avatar de Nicodemos Torquato">
+                </div>
+            </div>
+            <div class="about">
+                <h2>Sobre mim</h2>
+                <p>
+                    Sou estudante dedicado ao desenvolvimento profissional nas áreas de 
+                    <strong>Qualidade de Software (QA)</strong>, <strong>Redes de Computadores</strong>, 
+                    <strong>Programação Web</strong> e <strong>Python</strong>. <br><br>
+                    Atualmente estudo desde os conceitos básicos até a criação de redes locais (intranet) no Packet Tracer,
+                    e busco aplicar boas práticas em testes de software e automação. <br><br>
+                    Tenho facilidade em aprender, me comunico bem em equipe e gosto de documentar e organizar meus aprendizados — 
+                    seja em planilhas, dashboards ou anotações técnicas. <br><br>
+                    Meu foco é evoluir como profissional de tecnologia, contribuindo com qualidade, clareza e eficiência nos projetos que participo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE HABILIDADES -->
+    <section id="skills" class="js-section">
+        <div class="skills">
+            <div class="container">
+                <h2>Habilidades</h2>
+                <div class="cards">
+                    <div class="box">
+                        <p>Python</p>
+                        <img src="/image/python.png" alt="python">
+                    </div>
+                    <div class="box">
+                        <p>Excel & Dashboards</p>
+                        <img src="/image/excel.png" alt="excel">
+                    </div>
+                    <div class="box">
+                        <p>QA & Testes</p>
+                        <img src="/image/QA.png" alt="qualidade de software">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE PROJETOS -->
+    <section id="projects" class="js-section">
+        <div class="container">
+            <h2>Projetos</h2>
+            <div class="highlights">
+                <h3>Destaques</h3>
+                <div class="cards-projects">
+                    <div class="box">
+                        <div class="cover">
+                            <img src="assets/projects/dashboard-excel.jpg" alt="Dashboard em Excel">
+                            <div class="details">
+                                <p>Dashboard de Controle de Estudos</p>
+                                <div class="mini-languages">
+                                    <img src="assets/mini-languages/excel.svg" alt="excel">
+                                    <img src="assets/mini-languages/vba.svg" alt="vba">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <p>2025</p>
+                            <a>Ver mais</a>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="cover">
+                            <img src="assets/projects/rede-intranet.jpg" alt="Rede Intranet">
+                            <div class="details">
+                                <p>Simulação de Intranet no Packet Tracer</p>
+                                <div class="mini-languages">
+                                    <img src="assets/mini-languages/network.svg" alt="rede">
+                                    <img src="assets/mini-languages/cisco.svg" alt="cisco">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <p>2025</p>
+                            <a>Ver mais</a>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="cover">
+                            <img src="assets/projects/site-qa.jpg" alt="Projeto QA Front-End">
+                            <div class="details">
+                                <p>Site QA - Testes de Interface e Acessibilidade</p>
+                                <div class="mini-languages">
+                                    <img src="assets/mini-languages/html.svg" alt="html">
+                                    <img src="assets/mini-languages/css.svg" alt="css">
+                                    <img src="assets/mini-languages/javascript.svg" alt="javascript">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <p>2024</p>
+                            <a>Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="allprojects">
+                <h3>Outros projetos</h3>
+                <p>Em breve serão adicionados novos projetos e estudos práticos nas áreas de QA, Python e redes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE CONTATO -->
+    <section id="contacts" class="js-section">
+        <div class="contacts">
+            <div class="container">
+                <h2>Contatos</h2>
+                <div class="icons">
+                    <div class="icon">
+                        <a href="mailto:nicodemos.torquato@gmail.com" target="_blank">
+                            <div class="box">
+                                <img src="assets/contacts/mail.svg" alt="e-mail">
+                            </div>
+                        </a>
+                        <p>E-mail</p>
+                        <p>nicodemos.torquato@gmail.com</p>
+                    </div>
+
+                    <div class="icon">
+                        <a href="https://www.linkedin.com/in/nicodemostorquato" target="_blank">
+                            <div class="box">
+                                <img src="assets/contacts/linkedin.svg" alt="linkedin">
+                            </div>
+                        </a>
+                        <p>LinkedIn</p>
+                        <p>@nicodemostorquato</p>
+                    </div>
+
+                    <div class="icon">
+                        <a href="https://github.com/NiTorquato" target="_blank">
+                            <div class="box">
+                                <img src="assets/contacts/github.svg" alt="github">
+                            </div>
+                        </a>
+                        <p>GitHub</p>
+                        <p>@NiTorquato</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL -->
+    <div class="modal hidden">
+        <div class="top">
+            <div class="video">
+                <iframe src="" frameborder="0" width="100%" height="100%" allowfullscreen></iframe>
+            </div>
+            <div class="info">
+                <div class="title">
+                    <h2></h2>
+                    <i class="ri-close-line"></i>
+                </div>    
+                <p></p>
+                <span></span>
+            </div>
+        </div>
+        <div class="links">
+            <a href="" target="_blank" class="link-project">Acessar projeto</a>
+            <a href="" target="_blank" class="link-repository">Acessar repositório</a>
+            <a href="" target="_blank" class="link-linkedin">Ver post no LinkedIn</a>
+        </div>
+    </div>
+
+    <!-- MENU MOBILE -->
+    <div class="menuOpen hidden">
+        <h2>Bem-vindo ao meu Portfólio :)</h2>
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#skills">Habilidades</a>
+            <a href="#projects">Projetos</a>
+            <a href="#contacts">Contatos</a>
+        </nav>
+    </div>
+
+    <!-- DADOS ESTRUTURADOS -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Nicodemos Torquato",
+      "url": "https://nitorquato.github.io",
+      "jobTitle": "Estudante e Futuro Profissional em QA e Desenvolvimento",
+      "description": "Estudante dedicado nas áreas de Qualidade de Software, Redes de Computadores e Programação Web. Atualmente aprimorando habilidades em Python, HTML, CSS, Excel e automação de testes.",
+      "email": "mailto:nicodemostorquato@gmail.com",
+      "image": "https://avatars.githubusercontent.com/u/000000000?v=4",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Brasil",
+        "addressCountry": "BR"
+      },
+      "sameAs": [
+        "https://github.com/NiTorquato",
+        "https://www.linkedin.com/in/nicodemostorquato"
+      ]
+    }
+    </script>
+
 </body>
 </html>
