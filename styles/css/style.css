@@ -1,10 +1,8 @@
-/* --- 0. Variáveis e Reset Básico --- */
 :root {
-    /* Cores (Modo Escuro inspirado no vídeo) */
-    --color-primary: #8c60f7; /* Roxo de destaque */
-    --color-secondary: #5d3f9e; /* Roxo mais escuro/sombra */
-    --color-background-dark: #1f1d2c; /* Fundo principal escuro */
-    --color-background-card: #2c2a3d; /* Fundo de cards/elementos */
+    --color-primary: #00bfff; /* Azul vibrante de destaque */
+    --color-secondary: #0099cc; /* Azul mais escuro/sombra */
+    --color-background-dark: #1a2a3a; /* Azul Escuro Profundo */
+    --color-background-card: #21364a; /* Azul Escuro Leve para Cards */
     --color-text-light: #ffffff;
     --color-text-muted: #c0c0c0;
     --color-border: #4d4d6e; /* Borda sutil */
@@ -209,18 +207,25 @@ header h2 {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    /* Destaque circular roxo */
+    /* Destaque circular roxo/azul */
     background: radial-gradient(circle at center, var(--color-primary) 0%, transparent 70%);
     padding: 10px;
     animation: pulse-glow 2s infinite alternate; /* Adiciona uma animação sutil */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.profile:hover {
+    transform: scale(1.05); /* Aumenta a imagem em 5% */
+    box-shadow: 0 0 30px rgba(0, 191, 255, 0.6); /* Sombra mais intensa */
+    cursor: pointer; /* Indica que é clicável */
 }
 
 @keyframes pulse-glow {
     from {
-        box-shadow: 0 0 10px rgba(140, 96, 247, 0.4);
+        box-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
     }
     to {
-        box-shadow: 0 0 20px rgba(140, 96, 247, 0.8);
+        box-shadow: 0 0 20px rgba(0, 191, 255, 0.8);
     }
 }
 
@@ -231,7 +236,8 @@ header h2 {
     border-radius: 50%;
     display: block;
     /* Borda sutil interna */
-    border: 5px solid rgba(140, 96, 247, 0.2); 
+    border: 5px solid rgba(0, 191, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
 }
 
 /* Botões de Ação */
@@ -254,7 +260,7 @@ header h2 {
 }
 
 .actions a:first-child:hover {
-    background-color: #ab86ff;
+    background-color: #33ccff;
 }
 
 .actions a:last-child {
@@ -318,7 +324,7 @@ header h2 {
 
 .skills .box:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(140, 96, 247, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 191, 255, 0.3);
 }
 
 .skills .box img {
