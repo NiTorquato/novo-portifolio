@@ -83,11 +83,6 @@ header h2 {
     cursor: pointer;
 }
 
-/* Esconde o menu toggle por padrão (só aparecerá em mobile) */
-.menu {
-    display: none;
-}
-
 /* Estilizando o Toggle de Modo Escuro/Claro (Switch) */
 .toggle input[type="checkbox"] {
     opacity: 0;
@@ -125,14 +120,14 @@ header h2 {
 }
 
 
-/* --- 2. Menu Mobile --- */
+/* --- . Menu  --- */
 .menuOpen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(31, 29, 44, 0.95);
+    background-color: rgba(10, 6, 43, 0.95);
     z-index: 999;
     padding: 100px 50px;
     display: flex;
@@ -153,7 +148,7 @@ header h2 {
     display: block;
     font-size: 1.5em;
     margin: 20px 0;
-    color: var(--color-text-light);
+    color: #aae1f3;
     transition: color 0.3s;
 }
 
@@ -604,10 +599,6 @@ header h2 {
     /* Cabeçalho */
     header .container .toggle {
         display: none; /* Esconde o toggle switch no mobile para simplificar */
-    }
-
-    .menu {
-        display: flex; /* Mostra o menu hamburger */
     }
 
     /* Seção Sobre */
