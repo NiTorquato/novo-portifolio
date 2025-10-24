@@ -11,7 +11,7 @@ const lightThemeVars = {
     '--color-background-dark': '#f0f0f0', // Fundo principal claro
     '--color-background-card': '#ffffff', // Fundo de cards/elementos claro
     '--color-text-light': '#0a104bff', // Texto escuro
-    '--color-text-muted': '#c0c0c0', // Texto muted mais escuro
+    '--color-text-muted': '#0a104bff', // Texto muted mais escuro
     '--color-border': '#c0c0c0', // Borda clara
 };
 
@@ -22,7 +22,7 @@ const darkThemeVars = {
     '--color-background-dark': '#041525ff', // NOVO: AZUL ESCURO PROFUNDO
     '--color-background-card': '#081929ff', // NOVO: AZUL ESCURO LEVE PARA CARDS
     '--color-text-light': '#ffffff',
-    '--color-text-muted': '#c0c0c0',
+    '--color-text-muted': '#e1f7faff',
     '--color-border': '#1b1b58ff',
 };
 
