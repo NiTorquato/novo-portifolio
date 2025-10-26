@@ -1,8 +1,13 @@
+/* NOVO-PORTIFOLIO/STYLES/CSS/STYLE.CSS */
+
 :root {
     --color-primary: #00bfff; /* Azul vibrante de destaque */
     --color-secondary: #0099cc; /* Azul mais escuro/sombra */
-    --color-background-dark: #1a2a3a; /* Azul Escuro Profundo */
-    --color-background-card: #21364a; /* Azul Escuro Leve para Cards */
+    
+    /* ATUALIZAR ESTES DOIS VALORES para refletir as cores do seu script.js */
+    --color-background-dark: #041525ff; /* NOVO: AZUL ESCURO PROFUNDO */
+    --color-background-card: #081929ff; /* NOVO: AZUL ESCURO LEVE para Cards */
+    
     --color-text-light: #ffffff;
     --color-text-muted: #c0c0c0;
     --color-border: #4d4d6e; /* Borda sutil */
@@ -670,5 +675,41 @@ header h2 {
     .modal .links {
         flex-direction: column;
         width: 100%;
+    }
+}
+
+/* --- Estilo para o Botão "Ver Todos os Projetos" --- */
+
+/* Container para centralizar o botão */
+.view-all-container {
+    text-align: center;
+    margin-top: 40px; /* Espaçamento acima do botão */
+    margin-bottom: 30px; /* Espaçamento abaixo do botão */
+}
+
+/* Estilo do botão, replicando o estilo primário da seção "Sobre" */
+.btn-ver-mais {
+    /* Define o mesmo padding e border-radius dos botões de ação */
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+    
+    /* Cores primárias (Azul) */
+    background-color: var(--color-primary);
+    color: var(--color-background-dark); /* Texto escuro no fundo azul */
+    
+    /* Garante que o botão seja um bloco para que o padding funcione */
+    display: inline-block;
+}
+
+.btn-ver-mais:hover {
+    background-color: #33ccff; /* Um tom de azul mais claro no hover */
+}
+
+/* Ajuste de Responsividade */
+@media (max-width: 950px) {
+    .view-all-container {
+        margin-top: 30px;
     }
 }
