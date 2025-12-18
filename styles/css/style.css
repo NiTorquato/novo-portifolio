@@ -352,7 +352,7 @@ header h2 {
 .cards-projects {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 25px;
     justify-content: center;
     margin-bottom: 50px;
 }
