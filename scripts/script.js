@@ -10,8 +10,8 @@ const lightThemeVars = {
     '--color-secondary': '#0099cc',
     '--color-background-dark': '#f0f0f0', // Fundo principal claro
     '--color-background-card': '#ffffff', // Fundo de cards/elementos claro
-    '--color-text-light': '#0a104bff', // Texto escuro
-    '--color-text-muted': '#0a104bff', // Texto muted mais escuro
+    '--color-text-light': '#0099cc', // Texto escuro
+    '--color-text-muted': '#00bfff', // Texto muted mais escuro
     '--color-border': '#c0c0c0', // Borda clara
 };
 
