@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio | Nicodemos Torquato - QA </title>
-    <link rel="shortcut icon" href="image/icons/N.png" type="">
+    <title>Portfólio | Nicodemos Torquato - QA</title>
+    <meta name="description" content="Conheça o portfólio de Nicodemos Torquato, estudante de Qualidade de Software e Ciência de Dados.">
+    <meta name="theme-color" content="#111612">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="image/icons/N.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/css/style.css">
+    <link rel="stylesheet" href="styles/css/modern.css">
     <script defer src="scripts/script.js"></script>
-    <script defer src="scripts/modal.js"></script>
 </head>
 <body>
 
@@ -17,14 +22,22 @@
     <header>
         <div class="container">
             <div class="menu">
-                <i class="ri-menu-line"></i>
-                <i class="ri-close-line hidden"></i>
+                <button type="button" class="menu-toggle" aria-label="Abrir navegação" aria-expanded="false" aria-controls="mobile-navigation">
+                    <i class="ri-menu-line" aria-hidden="true"></i>
+                    <i class="ri-close-line hidden" aria-hidden="true"></i>
+                </button>
             </div>
             <a href="#sobre">
                 <h2>Portfólio</h2>
-            </a>    
+            </a>
+            <nav class="desktop-nav" aria-label="Navegação principal">
+                <a href="#sobre">Sobre</a>
+                <a href="#skills">Habilidades</a>
+                <a href="#projects">Projetos</a>
+                <a href="#contacts">Contato</a>
+            </nav>
             <div class="toggle">
-                <input type="checkbox" name="checkbox" id="checkbox">
+                <input type="checkbox" name="checkbox" id="checkbox" aria-label="Alternar entre tema claro e escuro">
                 <label for="checkbox" class="label">
                     <div class="box"></div>
                 </label>
@@ -38,33 +51,29 @@
             <div class="banner">
                 <div class="intro">
                     <div class="title">
+                        <span class="eyebrow">PORTFÓLIO · <span id="portfolio-year"></span></span>
                         <h1>Nicodemos Torquato</h1> 
                         <span>QA | Ciência de Dados</span>
-                        <p>Aprendendo continuamente e aplicando boas práticas em qualidade de software e Ciência de Dados. 
-                           Busco transformar aprendizado em resultados reais e profissionais.</p>
+                        <p>Aprendo continuamente e aplico boas práticas em qualidade de software e Ciência de Dados. Busco transformar conhecimento em resultados reais.</p>
                     </div>
                     <div class="actions">
                         <a href="/documents/Curriculo Nicodemos Torquato.pdf" download>Download CV</a>
-                        <a href="https://wa.me/+5564999975864" target="_blank">Entrar em contato</a>
+                        <a href="https://wa.me/5564999975864" target="_blank" rel="noopener noreferrer">Entrar em contato</a>
                     </div>
                 </div>
-                <a href="https://www.linkedin.com/in/nicodemos-torquato/" target="_blank" aria-label="Acesse meu perfil no LinkedIn">
-        <div class="profile">
-            <img src="image/eu.jpeg" alt="Minha Nicodemos Torquato">
-        </div>
-    </a>
+                <a href="https://www.linkedin.com/in/nicodemos-torquato/" target="_blank" rel="noopener noreferrer" aria-label="Acesse meu perfil no LinkedIn">
+                    <div class="profile">
+                        <img src="image/eu.jpeg" alt="Foto de Nicodemos Torquato">
+                    </div>
+                </a>
                 
             </div>
             <div class="about">
                 <h2>Sobre mim</h2>
-                <p>
-                    Sou estudante dedicado ao desenvolvimento profissional nas áreas de 
-                    <strong>Qualidade de Software (QA)</strong> e <strong>Análise de Dados</strong> <br><br>
-                    Atualmente tenho <span id="idade"></span> anos e estudo desde os conceitos básicos e busco aplicar boas práticas em testes de software e automação. <br><br>
-                    Tenho facilidade em aprender, me comunico bem em equipe e gosto de documentar e organizar meus aprendizados — 
-                    seja em planilhas, dashboards ou anotações técnicas. <br><br>
-                    Meu foco é evoluir como profissional de tecnologia, contribuindo com qualidade, clareza e eficiência nos projetos que participo.
-                </p>
+                <p>Sou estudante dedicado ao desenvolvimento profissional nas áreas de <strong>Qualidade de Software (QA)</strong> e <strong>Análise de Dados</strong>.</p>
+                <p>Tenho <span id="idade"></span> anos e venho estudando os fundamentos dessas áreas para aplicar boas práticas em testes de software e automação.</p>
+                <p>Aprendo com facilidade, comunico-me bem em equipe e gosto de documentar e organizar meus aprendizados — seja em planilhas, dashboards ou anotações técnicas.</p>
+                <p>Meu foco é evoluir como profissional de tecnologia, contribuindo com qualidade, clareza e eficiência nos projetos dos quais participo.</p>
             </div>
         </div>
     </section>
@@ -76,13 +85,16 @@
                 <h2>Habilidades</h2>
                 <div class="cards">
                     <div class="box">
-                        <img src="/image/icons/python.png" alt="python">
+                        <img src="/image/icons/python.png" alt="">
+                        <p>Python</p>
                     </div>
                     <div class="box">
-                        <img src="/image/icons/excel.png" alt="excel">
+                        <img src="/image/icons/excel.png" alt="">
+                        <p>Excel</p>
                     </div>
                     <div class="box">
-                        <img src="/image/icons/QA.png" alt="qualidade de software">
+                        <img src="/image/icons/QA.png" alt="">
+                        <p>Qualidade de software</p>
                     </div>
                 </div>
             </div>
@@ -98,7 +110,7 @@
                 <div class="cards-projects">
                     <div class="box">
                         <div class="cover">
-                            <img src="/image/projetos/Fanta.png" alt="">
+                            <img src="/image/projetos/Fanta.png" alt="Página inicial do projeto Site Fanta">
                             <div class="details">
                                 <p>Site Fanta</p>
                                 <div class="mini-languages">
@@ -109,13 +121,13 @@
                         </div>
                         <div class="description">
                             <p>2025</p>
-                            <a href="https://site-fanta-nico.vercel.app/" target="_blank">Ver mais</a>
+                            <a href="https://site-fanta-nico.vercel.app/" target="_blank" rel="noopener noreferrer">Ver mais</a>
                         </div>
                     </div>
 
                     <div class="box">
                         <div class="cover">
-                            <img src="/image/projetos/Loja-Cafe.png" alt="">
+                            <img src="/image/projetos/Loja-Cafe.png" alt="Página inicial do projeto Loja de Café">
                             <div class="details">
                                 <p>Loja de Café</p>
                                 <div class="mini-languages">
@@ -126,13 +138,13 @@
                         </div>
                         <div class="description">
                             <p>2025</p>
-                            <a href="https://github.com/NiTorquato/Loja-de-Cafe" target="_blank">Ver mais</a>
+                            <a href="https://github.com/NiTorquato/Loja-de-Cafe" target="_blank" rel="noopener noreferrer">Ver mais</a>
                         </div>
                     </div>
 
                     <div class="box">
                         <div class="cover">
-                            <img src="/image/projetos/Trabalho Banco de Dados.png" alt="Projeto QA Front-End">
+                            <img src="/image/projetos/Trabalho Banco de Dados.png" alt="Diagrama do projeto de banco de dados">
                             <div class="details">
                                 <p>Projeto de Banco de Dados, empresa fictícia</p>
                                 <div class="mini-languages">
@@ -143,7 +155,7 @@
                         </div>
                         <div class="description">
                             <p>2025</p>
-                            <a href="https://github.com/NiTorquato/trabalhoBancodeDados" target="_blank">Ver mais</a>
+                            <a href="https://github.com/NiTorquato/trabalhoBancodeDados" target="_blank" rel="noopener noreferrer">Ver mais</a>
                         </div>
                     </div>
                 </div>
@@ -156,23 +168,23 @@
 
         <div class="box">
             <div class="cover">
-                <img src="/image/projetos/Portao.png" alt="">
+                <img src="/image/projetos/Portao.png" alt="Projeto Portão Sentinela LDR">
                 <div class="details">
                     <p>PORTÃO SENTINELA LDR</p>
                     <div class="mini-languages">
-                        <img src="/image/icons/protoboard.png" alt="Protoboard ícones criados por Freepik - Flaticon">
+                        <img src="/image/icons/protoboard.png" alt="">
                     </div>
                 </div>
             </div>
             <div class="description">
                 <p>2025</p>
-                <a href="https://github.com/NiTorquato/PORTAO-SENTINELA-LDR" target="_blank">Ver mais</a>
+                <a href="https://github.com/NiTorquato/PORTAO-SENTINELA-LDR" target="_blank" rel="noopener noreferrer">Ver mais</a>
             </div>
         </div>
 
         <div class="box">
             <div class="cover">
-                <img src="/image/projetos/Arvore Ordem.png" alt="">
+                <img src="/image/projetos/Arvore Ordem.png" alt="Projeto de árvore binária em ordem">
                 <div class="details">
                     <p>Árvore em Ordem</p>
                     <div class="mini-languages">
@@ -182,13 +194,12 @@
             </div>
             <div class="description">
                 <p>2025</p>
-                <a href="https://github.com/NiTorquato/arvore-ordem" target="_blank">Ver mais</a>
+                <a href="https://github.com/NiTorquato/arvore-ordem" target="_blank" rel="noopener noreferrer">Ver mais</a>
             </div>
         </div>
 
-        <!-- <div class="view-all-container">
-            <a href="projetos.html" class="btn-ver-mais">Ver Todos os Projetos</a>
-        </div> -->
+            </div>
+            <a href="projetos.html" class="all-projects-link">Explorar todos os projetos <i class="ri-arrow-right-up-line" aria-hidden="true"></i></a>
 
             </div>
         </div>
@@ -201,7 +212,7 @@
                 <h2>Contatos</h2>
                 <div class="icons">
                     <div class="icon">
-                        <a href="mailto:nicodemostorquato@gmail.com" target="_blank">
+                        <a href="mailto:nicodemostorquato@gmail.com" aria-label="Enviar e-mail para Nicodemos Torquato">
                             <div class="box">
                                 <img src="/image/icons/email.png" alt="">
                             </div>
@@ -211,7 +222,7 @@
                     </div>
 
                     <div class="icon">
-                        <a href="https://www.linkedin.com/in/nicodemos-torquato/" target="_blank">
+                        <a href="https://www.linkedin.com/in/nicodemos-torquato/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Nicodemos Torquato">
                             <div class="box">
                                 <img src="/image/icons/linkedin.png" alt="">
                             </div>
@@ -221,7 +232,7 @@
                     </div>
 
                     <div class="icon">
-                        <a href="https://github.com/NiTorquato" target="_blank">
+                        <a href="https://github.com/NiTorquato" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Nicodemos Torquato">
                             <div class="box">
                                 <img src="/image/icons/github.png" alt="">
                             </div>
@@ -250,16 +261,16 @@
             </div>
         </div>
         <div class="links">
-            <a href="" target="_blank" class="link-project">Acessar projeto</a>
-            <a href="" target="_blank" class="link-repository">Acessar repositório</a>
-            <a href="" target="_blank" class="link-linkedin">Ver post no LinkedIn</a>
+            <a href="" target="_blank" rel="noopener noreferrer" class="link-project">Acessar projeto</a>
+            <a href="" target="_blank" rel="noopener noreferrer" class="link-repository">Acessar repositório</a>
+            <a href="" target="_blank" rel="noopener noreferrer" class="link-linkedin">Ver post no LinkedIn</a>
         </div>
     </div>
 
     <!-- MENU MOBILE -->
-    <div class="menuOpen hidden">
+    <div class="menuOpen hidden" id="mobile-navigation" aria-hidden="true">
         <h2>Bem-vindo ao meu Portfólio :)</h2>
-        <nav>
+        <nav aria-label="Navegação móvel">
             <a href="#sobre">Sobre</a>
             <a href="#skills">Habilidades</a>
             <a href="#projects">Projetos</a>
@@ -275,10 +286,10 @@
       "@type": "Person",
       "name": "Nicodemos Torquato",
       "url": "https://nicodemostorquato.vercel.app/",
-      "jobTitle": "Estudante e Futuro Profissional em QA e Desenvolvimento",
-      "description": "Estudante dedicado nas áreas de Qualidade de Software. Atualmente aprimorando habilidades em Python, Excel e automação de testes.",
+      "jobTitle": "Estudante de QA e Ciência de Dados",
+      "description": "Estudante dedicado às áreas de Qualidade de Software e Ciência de Dados, com foco em Python, Excel e automação de testes.",
       "email": "mailto:nicodemostorquato@gmail.com",
-      "image": "https://avatars.githubusercontent.com/u/000000000?v=4",
+      "image": "https://nicodemostorquato.vercel.app/image/eu.jpeg",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Brasil",

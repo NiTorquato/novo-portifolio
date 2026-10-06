@@ -6,24 +6,24 @@ const root = document.documentElement; // Elemento raiz (<html>) para variáveis
 
 // Variáveis para o Modo Claro (Light Mode)
 const lightThemeVars = {
-    '--color-primary': '#00bfff', // Azul vibrante
-    '--color-secondary': '#0099cc',
-    '--color-background-dark': '#f0f0f0', // Fundo principal claro
-    '--color-background-card': '#ffffff', // Fundo de cards/elementos claro
-    '--color-text-light': '#0099cc', // Texto escuro
-    '--color-text-muted': '#00bfff', // Texto muted mais escuro
-    '--color-border': '#c0c0c0', // Borda clara
+    '--color-primary': '#466a2a',
+    '--color-secondary': '#c75b43',
+    '--color-background-dark': '#f3f2eb',
+    '--color-background-card': '#e8e9df',
+    '--color-text-light': '#182018',
+    '--color-text-muted': '#5c665b',
+    '--color-border': '#cbd1c4',
 };
 
 // Variáveis para o Modo Escuro (Dark Mode) - AGORA MAIS AZUL
 const darkThemeVars = {
-    '--color-primary': '#00bfff',
-    '--color-secondary': '#0099cc',
-    '--color-background-dark': '#041525ff', // NOVO: AZUL ESCURO PROFUNDO
-    '--color-background-card': '#081929ff', // NOVO: AZUL ESCURO LEVE PARA CARDS
-    '--color-text-light': '#ffffff',
-    '--color-text-muted': '#e1f7faff',
-    '--color-border': '#1b1b58ff',
+    '--color-primary': '#c7f36b',
+    '--color-secondary': '#ff8a72',
+    '--color-background-dark': '#111612',
+    '--color-background-card': '#1a211b',
+    '--color-text-light': '#f4f3eb',
+    '--color-text-muted': '#b4beb3',
+    '--color-border': '#354236',
 };
 
 // Função para aplicar o tema e salvar a preferência
@@ -53,22 +53,32 @@ checkbox.addEventListener('change', () => {
 });
 
 // --- 2. Mobile Menu Toggle (Menu Hamburger) ---
-const menuIcon = document.querySelector('.menu .ri-menu-line');
-const closeIcon = document.querySelector('.menu .ri-close-line');
+const menuToggle = document.querySelector('.menu-toggle');
+const menuIcon = menuToggle.querySelector('.ri-menu-line');
+const closeIcon = menuToggle.querySelector('.ri-close-line');
 const menuOpen = document.querySelector('.menuOpen');
 
-function toggleMobileMenu() {
-    menuOpen.classList.toggle('hidden');
-    menuIcon.classList.toggle('hidden');
-    closeIcon.classList.toggle('hidden');
+function toggleMobileMenu(isOpen = menuOpen.classList.contains('hidden')) {
+    menuOpen.classList.toggle('hidden', !isOpen);
+    menuOpen.setAttribute('aria-hidden', String(!isOpen));
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Fechar navegação' : 'Abrir navegação');
+    menuIcon.classList.toggle('hidden', isOpen);
+    closeIcon.classList.toggle('hidden', !isOpen);
 }
 
-menuIcon.addEventListener('click', toggleMobileMenu);
-closeIcon.addEventListener('click', toggleMobileMenu);
+menuToggle.addEventListener('click', () => toggleMobileMenu());
 
 // Fechar menu ao clicar em um link
 menuOpen.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', toggleMobileMenu);
+    link.addEventListener('click', () => toggleMobileMenu(false));
+});
+
+document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !menuOpen.classList.contains('hidden')) {
+        toggleMobileMenu(false);
+        menuToggle.focus();
+    }
 });
 
 // --- 3. Smooth Scroll para navegação ---
@@ -102,11 +112,16 @@ if (mesAtual < mesNascimento || (mesAtual === mesNascimento && diaAtual < diaNas
   idade--;
 }
 
-document.getElementById('idade').textContent = idade;
+const idadeElement = document.getElementById('idade');
+if (idadeElement) idadeElement.textContent = idade;
 
+function updatePortfolioYear() {
+    const portfolioYear = document.getElementById('portfolio-year');
+    if (portfolioYear) portfolioYear.textContent = new Date().getFullYear();
+}
 
 // Inicialização
 document.addEventListener('DOMContentLoaded', () => {
     loadTheme();
+    updatePortfolioYear();
 });
-
