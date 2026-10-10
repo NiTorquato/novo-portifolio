@@ -107,9 +107,18 @@ header h2 { font-size: 1.1rem; font-weight: 700; }
 
 .intro .title .eyebrow {
     display: inline-flex;
+    align-items: baseline;
+    gap: 0.35em;
     color: var(--color-secondary);
     font: 700 0.75rem 'DM Sans', sans-serif;
     letter-spacing: 0.14em;
+    line-height: 1;
+}
+
+.intro .title .eyebrow #portfolio-year {
+    display: inline-block;
+    font: inherit;
+    vertical-align: baseline;
 }
 
 .intro .title > span:not(.eyebrow) {
