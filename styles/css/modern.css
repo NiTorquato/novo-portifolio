@@ -243,22 +243,53 @@ h2 { font-size: 2rem; margin-bottom: 24px; border-left: 3px solid var(--color-se
 #contacts { padding: 76px 0 84px; text-align: left; }
 .contacts .icons { justify-content: flex-start; gap: 18px; margin-top: 32px; }
 
+
 .contacts .icon {
-    width: min(100%, 270px);
-    min-height: 176px;
+    display: flex;
+    flex: 1 1 300px;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    min-height: 180px;
     align-items: flex-start;
     text-align: left;
     padding: 20px;
     border: 1px solid var(--color-border);
     border-radius: 4px;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
     transition: border-color 180ms ease, transform 180ms ease;
 }
 
 .contacts .icon:hover { border-color: var(--color-primary); transform: translateY(-3px); }
-.contacts .icon .box { width: 42px; height: 42px; margin-bottom: 14px; background: transparent; border: 0; border-radius: 0; }
+.contacts .icon .contact-card-link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+.contacts .icon .contact-card-link:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 4px;
+}
+.contacts .icon .box { width: 50px; height: 50px; margin-bottom: 14px; background: transparent; border: 0; border-radius: 0; }
 .contacts .icon .box:hover { background: transparent; transform: none; }
-.contacts .icon img { width: 27px; height: 27px; object-fit: contain; }
+.contacts .icon img { width: 40px; height: 40px; object-fit: contain; }
 .contacts .icon p:last-of-type { overflow-wrap: anywhere; }
+
+.copyright-section {
+    padding: 24px var(--padding-container);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.88rem;
+    text-align: center;
+}
+
+.copyright-section p { margin: 4px 0; }
+.copyright-section a { color: var(--color-primary); }
+.copyright-section a:hover { color: var(--color-text-light); }
+
 .menuOpen { z-index: 999; background: var(--color-background-dark); }
 .menuOpen nav a { color: var(--color-text-light); }
 
@@ -299,8 +330,8 @@ a:focus-visible, .menu-toggle:focus-visible, .toggle input:focus-visible + .labe
     #projects > .container > h2 { margin-bottom: 34px; }
     .cards-projects { grid-template-columns: 1fr; gap: 14px; margin-bottom: 38px; }
     .contacts .icons { display: grid; grid-template-columns: 1fr; gap: 10px; }
-    .contacts .icon { width: 100%; min-height: 0; display: grid; grid-template-columns: 42px 1fr; column-gap: 12px; padding: 14px; }
-    .contacts .icon > a { grid-row: span 2; }
+    .contacts .icon { flex: initial; width: 100%; max-width: none; min-height: 0; display: grid; grid-template-columns: 50px 1fr; column-gap: 12px; padding: 14px; }
+    .contacts .icon > .box { grid-row: span 2; }
     .contacts .icon .box { margin: 0; }
     .contacts .icon p:first-of-type, .contacts .icon p:last-of-type { grid-column: 2; }
     .menuOpen { padding: 100px 24px; }
